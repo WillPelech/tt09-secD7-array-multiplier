@@ -8,13 +8,15 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
+Our program works by using a 4x4 array multiplier computes the product of two 4-bit binary numbers, m and q, through bitwise multiplication and summing partial products. Each bit of q is multiplied by every bit of m, generating partial products that are shifted based on their significance.
+Full adders (FA) then sum these partial products. At each stage, the full adders combine two partial product bits and any carry from the previous stage. As the process progresses through the rows, the number of bits to sum increases, which is managed by additional full adders.
+The final output is an 8-bit product p, with the least significant bit produced by the sum of the first row and the most significant bit formed by the final carry after all additions.
 
-Explain how your project works
 
 ## How to test
 
-Explain how to use your project
+Provide the test bench with input numbers
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Tiny Tapeout design
