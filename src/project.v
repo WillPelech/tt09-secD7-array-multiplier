@@ -28,6 +28,8 @@ module tt_um_array_mult_structural(
     wire [3:0] res0, res1, res2, res3;
 
     genvar i;
+    //generate statement to go through and find the results of 
+    //bit multiplication
     generate
       for (i = 0; i < 4; i = i + 1) begin : and_gen
             assign res0[i] = m[0] & q[i];
@@ -40,6 +42,7 @@ module tt_um_array_mult_structural(
    endgenerate
 
     //represents first 4 bit adder
+    //In here all partial products are calculated
     full_adder m1p0 (res1[0], s0[1], c0[0], s1[0], c1[0]);
     full_adder m1p1 (res1[1], s0[2], c0[1], s1[1], c1[1]);
     full_adder m1p2 (res1[2], s0[3], c0[2], s1[2], c1[2]);
@@ -59,7 +62,7 @@ module tt_um_array_mult_structural(
     full_adder cp5(s3[2], c3[1], c4[0], s4[1], c4[1]);
     full_adder cp6(s3[3], c3[2], c4[1], s4[2], c4[2]);
     full_adder cp7(1'b0, c3[3], c4[2], s4[3], c4[3]);
-
+    //assigns the final result to p
     assign p = {s4[3], s4[2], s4[1], s4[0], s3[0], s2[0], s1[0], s0[0]};
 
     assign uo_out=p;

@@ -14,7 +14,7 @@ The final output is an 8-bit product p, with the least significant bit produced 
 
 
 ## How to test
-To test the 4x4 multipler feed the multiplier two 4 bit inputs. From here the partial products will be calculated and the remaining product should be a binary representation of the decimal product. To very you can convert between binary and decimal.
+To test the 4x4 multipler feed the multiplier two 4 bit inputs. From here the partial products will be calculated and the remaining product should be a binary representation of the decimal product. To verify you can convert final products between binary and decimal and compare expected values.
 
 
 ## External hardware
